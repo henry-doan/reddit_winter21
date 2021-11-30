@@ -93,7 +93,7 @@ class SubsController < ApplicationController
   # model - sub
   def index
     @subs = Sub.all
-    render component: 'Subs', props: { subs: @subs}
+    render component: 'Subs', props: { subs: @subs }
   end
 
   def show

@@ -34,6 +34,9 @@ comment Model
     Edit View = CommentEdit
     create, update, destroy - model, no views but do handle in one of the above. 
 
+style 
+test 
+
 View -> pages 
 
 * Make sure the parent for all MVC Routes all done in

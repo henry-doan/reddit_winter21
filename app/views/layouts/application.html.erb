@@ -12,6 +12,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= react_component('Navbar', {prerender: true}) %>
+      <div class="container">
+        <%= yield %>
+      </div>
+    <%= react_component('Footer', {prerender: true}) %>
   </body>
 </html>

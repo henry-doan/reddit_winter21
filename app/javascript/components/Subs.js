@@ -35,17 +35,23 @@ const Subs = ({ subs }) => {
       <a href="/subs/new">
         <button className="btn btn-dark">Add Sub</button>
       </a>
-
-      { subs.map( (sub) => (
-        <>
-          <h3>{sub.name}</h3>
-          <a href={`/subs/${sub.id}`}>Show</a>
-          <a href={`/subs/${sub.id}/edit`}>Edit</a>
-          <a href={`/subs/${sub.id}`} data-method='delete'>
-            Delete
-          </a>
-        </>
-      )) }
+      <br />
+      <br />
+      <ul class="list-group">
+        { subs.map( (sub) => (
+          <li className="list-group-item">
+            <h3>{sub.name}</h3>
+            <div className="btn-group btn-group-toggle" data-toggle="buttons">
+              <a className="btn btn-primary" href={`/subs/${sub.id}`}>Show</a>
+              <a className="btn btn-warning" href={`/subs/${sub.id}/edit`}>Edit</a>
+              <a className="btn btn-danger" href={`/subs/${sub.id}`} data-method='delete'>
+                Delete
+              </a>
+            </div>
+          </li>
+        )) }
+      </ul>
+      <br />
     </>
   )
 }

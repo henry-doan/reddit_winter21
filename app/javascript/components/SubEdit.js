@@ -13,17 +13,22 @@ const SubEdit = ({ sub }) => {
       <form action={`/subs/${id}`} method="post">
         {/* need for the update */}
         <input type='hidden' name='_method' value="patch" /> 
-        <input
-          type="text"
-          placeholder="Sub name"
-          required
-          // these next ones are a must
-          defaultValue={defaultName}
-          name="sub[name]"
-        />
-        <button type="submit">Update Sub</button>
+        <div className="form-group">
+          <label>Name</label>
+          <input
+            className="form-control col-md-6"
+            type="text"
+            placeholder="Sub name"
+            required
+            // these next ones are a must
+            defaultValue={defaultName}
+            name="sub[name]"
+          />
+        </div>
+        <button type="submit" className="btn btn-primary">Update Sub</button>
       </form>
-      <a href="/subs">Back to Subs</a>
+      <br />
+      <a href="/subs" className="btn btn-success">Back to Subs</a>
     </>
   )
 }

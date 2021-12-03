@@ -11,17 +11,22 @@ const SubNew = ({ sub }) => {
     <>
       <h1>Create new Sub</h1>
       <form action="/subs" method="post">
-        <input
-          type="text"
-          placeholder="Sub name"
-          required
-          // these next ones are a must
-          defaultValue={defaultName}
-          name="sub[name]"
-        />
-        <button type="submit">Add Sub</button>
+        <div className="form-group">
+          <label>Name</label>
+          <input
+            className="form-control col-md-6"
+            type="text"
+            placeholder="Sub name"
+            required
+            // these next ones are a must
+            defaultValue={defaultName}
+            name="sub[name]"
+          />
+        </div>
+        <button type="submit" className="btn btn-primary">Add Sub</button>
       </form>
-      <a href="/subs">Back to Subs</a>
+      <br />
+      <a href="/subs" className="btn btn-success">Back to Subs</a>
     </>
   )
 }

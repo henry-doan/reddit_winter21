@@ -10,18 +10,23 @@ const Topics = ({ sub, topics, taco }) => {
     <>
       <h1>All topics from {name}</h1>
       <p>{taco}</p>
-      <a href={`/subs/${id}/topics/new`}>Add new topic</a>
+      <a href={`/subs/${id}/topics/new`} className="btn btn-dark">Add new topic</a>
+      <br />
       {/* topics = [{ title: 'adfadf', body: 'dasfasdf', id: 1}, { title: 'adfadf', body: 'dasfasdf', id: 2}] */}
-      { topics.map( (topic) => (
-        <>
-          <h3>{topic.title}</h3>
-          <a href={`${url}${topic.id}`}>Show</a>
-          <a href={`${url}${topic.id}/edit`}>Edit</a>
-          <a href={`${url}${topic.id}`} data-method="delete">
-            Delete
-          </a>
-        </>
-      ))}
+      <ul class="list-group">
+        { topics.map( (topic) => (
+          <li className="list-group-item">
+            <h3>{sub.name}</h3>
+            <div className="btn-group btn-group-toggle" data-toggle="buttons">
+              <a className="btn btn-primary" href={`${url}${topic.id}`}>Show</a>
+              <a className="btn btn-warning" href={`${url}${topic.id}/edit`}>Edit</a>
+              <a className="btn btn-danger" href={`${url}${topic.id}`} data-method='delete'>
+                Delete
+              </a>
+            </div>
+          </li>
+        )) }
+      </ul>
     </>
   )
 }

@@ -12,6 +12,8 @@ const Topic = ({ sub, topic }) => {
         {body}
       </p>
       <a href={`/subs/${id}`}>Show page of {name}</a>
+      <br />
+      <a href={`/topics/${topic.id}/comments`}>Comments</a>
     </>
   )
 }
